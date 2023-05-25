@@ -6,7 +6,7 @@ import {
 } from "features/todolistsList/Todolist/todolists.reducer";
 import React, {FC} from "react";
 import {Button} from "@mui/material";
-
+import s from './filterTaskButtons.module.css'
 type Props = {
     todolist: TodolistDomainType
 }
@@ -18,19 +18,24 @@ export const FilterTasksButtons: FC<Props> = ({todolist}) => {
     }
 
     return (
-        <div>
-            <Button variant={todolist.filter === 'all' ? 'outlined' : 'text'}
+        <div className={s.filterBlock}>
+            <Button variant={"outlined"}
+                    style={{width: '100px'}}
                     onClick={() => changeFilterHandler('all')}
-                    color={'inherit'}
+                    color={todolist.filter === 'all' ? 'secondary' : 'inherit'}
             >All
             </Button>
-            <Button variant={todolist.filter === 'active' ? 'outlined' : 'text'}
+            <Button variant={"outlined"}
+                    style={{width: '100px'}}
                     onClick={() => changeFilterHandler('active')}
-                    color={'primary'}>Active
+                    color={todolist.filter === 'active' ? 'secondary' : 'inherit'}
+                    >Active
             </Button>
-            <Button variant={todolist.filter === 'completed' ? 'outlined' : 'text'}
+            <Button variant={"outlined"}
+                    style={{width: '100px'}}
                     onClick={() => changeFilterHandler('completed')}
-                    color={'secondary'}>Completed
+                    color={todolist.filter === 'completed' ? 'secondary' : 'inherit'}
+                    >Completed
             </Button>
         </div>
     )

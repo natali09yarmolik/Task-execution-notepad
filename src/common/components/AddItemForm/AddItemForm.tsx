@@ -1,7 +1,7 @@
 import React, {ChangeEvent, FC, KeyboardEvent, memo, useState} from 'react';
-import { IconButton, TextField } from '@mui/material';
-import { AddBox } from '@mui/icons-material';
+import { TextField } from '@mui/material';
 import {RejectValueType} from "common/utils/create-app-async-thunk";
+import s from './addItem.module.css'
 
 type PropsType = {
 	addItem: (title: string) => Promise<any>
@@ -44,7 +44,7 @@ export const AddItemForm:FC<PropsType> = memo( ({addItem, disabled = false})=> {
 		}
 	}
 
-	return <div>
+	return <div className={s.addItemBlock}>
 		<TextField variant="outlined"
 				   disabled={disabled}
 				   error={!!error}
@@ -54,8 +54,8 @@ export const AddItemForm:FC<PropsType> = memo( ({addItem, disabled = false})=> {
 				   label="Title"
 				   helperText={error}
 		/>
-		<IconButton color="primary" onClick={addItemHandler} disabled={disabled}>
-			<AddBox/>
-		</IconButton>
+		<button onClick={addItemHandler}
+				disabled={disabled}> X
+		</button>
 	</div>
 })

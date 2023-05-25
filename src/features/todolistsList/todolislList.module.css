@@ -1,0 +1,16 @@
+.mainBlock{
+    display: inline-block;
+    width: 100%;
+}
+.titleTask{
+    width: 94%;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.tasksBlock{
+    width: 94%;
+    margin: 50px auto;
+}

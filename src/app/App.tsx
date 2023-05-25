@@ -1,25 +1,21 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import {
-	AppBar,
-	Button,
 	CircularProgress,
 	Container,
-	IconButton,
 	LinearProgress,
-	Toolbar,
-	Typography
 } from '@mui/material';
-import { Menu } from '@mui/icons-material'
 import { Login } from 'features/auth/Login/Login'
-import './App.css'
+import 'app/App.module.css'
 import { TodolistsList } from 'features/todolistsList/TodolistsList'
 import { ErrorSnackbar } from 'common/components'
 import { useActions } from 'common/hooks';
 import { selectIsLoggedIn } from 'features/auth/auth.selectors';
 import { selectAppStatus, selectIsInitialized } from 'app/app.selectors';
 import { authThunks } from 'features/auth/auth.reducer';
+import s from './App.module.css'
+import style from '../container.module.css'
 
 function App() {
 	const status = useSelector(selectAppStatus)
@@ -45,18 +41,14 @@ function App() {
 		<BrowserRouter>
 			<div className="App">
 				<ErrorSnackbar/>
-				<AppBar position="static">
-					<Toolbar>
-						<IconButton edge="start" color="inherit" aria-label="menu">
-							<Menu/>
-						</IconButton>
-						<Typography variant="h6">
-							News
-						</Typography>
-						{isLoggedIn && <Button color="inherit" onClick={logoutHandler}>Log out</Button>}
-					</Toolbar>
+				<header className={s.headerBlock}>
+					<div className={`${s.headerInfo} ${style.container}`}>
+						<h2>Task execution notepad</h2>
+						{isLoggedIn && <button className={s.headerButton} onClick={logoutHandler}>Log out</button>}
+					</div>
 					{status === 'loading' && <LinearProgress/>}
-				</AppBar>
+				</header>
+				{/*<TodolistsList/>*/}
 				<Container fixed>
 					<Routes>
 						<Route path={'/'} element={<TodolistsList/>}/>

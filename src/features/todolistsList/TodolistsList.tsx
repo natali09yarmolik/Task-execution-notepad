@@ -9,8 +9,8 @@ import { useActions } from 'common/hooks';
 import { selectIsLoggedIn } from 'features/auth/auth.selectors';
 import { selectTasks } from 'features/todolistsList/Task/tasks.selectors';
 import { selectTodolists } from 'features/todolistsList/Todolist/todolists.selectors';
-
-
+import s from './todolislList.module.css'
+import style from '../../container.module.css'
 
 export const TodolistsList = () => {
 	const todolists = useSelector(selectTodolists)
@@ -20,11 +20,10 @@ export const TodolistsList = () => {
 	const {
 		addTodolist: addTodolistThunk,
 		fetchTodolists,
-		} = useActions(todolistsThunks)
+	} = useActions(todolistsThunks)
 
 
-
-		useEffect(() => {
+	useEffect(() => {
 		if (!isLoggedIn) {
 			return;
 		}
@@ -40,25 +39,36 @@ export const TodolistsList = () => {
 	}
 
 	return <>
-		<Grid container style={{padding: '20px'}}>
-			<AddItemForm addItem={addTodolist}/>
-		</Grid>
-		<Grid container spacing={3}>
-			{
-				todolists.map(tl => {
-					let allTodolistTasks = tasks[tl.id]
+		<main className={s.mainBlock}>
+			<div className={`${s.titleTask} ${style.container}`}>
+				<span>Enter the title of the task</span>
+				<Grid>
+					<AddItemForm addItem={addTodolist}/>
+				</Grid>
+			</div>
+			<div className={s.tasksBlock}>
+				<Grid container
+					  direction="row"
+					  justifyContent="space-between"
+				>
+					{
+						todolists.map(tl => {
+							let allTodolistTasks = tasks[tl.id]
+							return <Grid item key={tl.id} spacing={3}>
 
-					return <Grid item key={tl.id}>
-						<Paper style={{padding: '10px'}}>
-							<Todolist
-								todolist={tl}
-								tasks={allTodolistTasks}
+								<Paper style={{padding: '10px'}}>
+									<Todolist
+										todolist={tl}
+										tasks={allTodolistTasks}
+									/>
+								</Paper>
+							</Grid>
+						})
+					}
+				</Grid>
+			</div>
 
-							/>
-						</Paper>
-					</Grid>
-				})
-			}
-		</Grid>
+		</main>
+
 	</>
 }
