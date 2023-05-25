@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/natali09yarmolik/Task-execution-notepad/static/css/main.081b83ce.css",
+    "main.js": "/natali09yarmolik/Task-execution-notepad/static/js/main.46ba8ff6.js",
+    "index.html": "/natali09yarmolik/Task-execution-notepad/index.html",
+    "main.081b83ce.css.map": "/natali09yarmolik/Task-execution-notepad/static/css/main.081b83ce.css.map",
+    "main.46ba8ff6.js.map": "/natali09yarmolik/Task-execution-notepad/static/js/main.46ba8ff6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.081b83ce.css",
+    "static/js/main.46ba8ff6.js"
+  ]
+}
