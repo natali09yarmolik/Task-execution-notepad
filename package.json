@@ -1,6 +1,6 @@
 {
 	"name": "it-incubator-todolist-ts",
-	"homepage": "https://natali09yarmolik.github.io/Task-execution-notepad/",
+	"homepage": ".",
 	"jest": {
 		"moduleNameMapper": {
 			"axios": "axios/dist/node/axios.cjs"
