@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Task-execution-notepad/static/css/main.c08bfd5c.css",
-    "main.js": "/Task-execution-notepad/static/js/main.494a285f.js",
-    "index.html": "/Task-execution-notepad/index.html",
-    "main.c08bfd5c.css.map": "/Task-execution-notepad/static/css/main.c08bfd5c.css.map",
-    "main.494a285f.js.map": "/Task-execution-notepad/static/js/main.494a285f.js.map"
+    "main.css": "/static/css/main.c08bfd5c.css",
+    "main.js": "/static/js/main.494a285f.js",
+    "index.html": "/index.html",
+    "main.c08bfd5c.css.map": "/static/css/main.c08bfd5c.css.map",
+    "main.494a285f.js.map": "/static/js/main.494a285f.js.map"
   },
   "entrypoints": [
     "static/css/main.c08bfd5c.css",
