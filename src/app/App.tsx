@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import {
 	CircularProgress,
-	Container,
 	LinearProgress,
 } from '@mui/material';
 import { Login } from 'features/auth/Login/Login'
