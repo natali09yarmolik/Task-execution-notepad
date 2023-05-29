@@ -3,7 +3,7 @@
     width: 100%;
 }
 .titleTask{
-    width: 94%;
+    width: 80%;
     padding-top: 20px;
     display: flex;
     flex-direction: column;
@@ -11,6 +11,6 @@
     gap: 10px;
 }
 .tasksBlock{
-    width: 94%;
+    width: 80%;
     margin: 50px auto;
 }

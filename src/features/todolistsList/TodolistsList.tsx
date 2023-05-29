@@ -49,7 +49,8 @@ export const TodolistsList = () => {
 			<div className={s.tasksBlock}>
 				<Grid container
 					  direction="row"
-					  justifyContent="space-between"
+					  justifyContent="flex-start"
+					  gap='25px'
 				>
 					{
 						todolists.map(tl => {

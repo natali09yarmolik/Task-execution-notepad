@@ -48,13 +48,12 @@ function App() {
 					</div>
 					{status === 'loading' && <LinearProgress/>}
 				</header>
-				{/*<TodolistsList/>*/}
-				<Container fixed>
+				<div className={s.mainBlock}>
 					<Routes>
 						<Route path={'/'} element={<TodolistsList/>}/>
 						<Route path={'/login'} element={<Login/>}/>
 					</Routes>
-				</Container>
+				</div>
 			</div>
 		</BrowserRouter>
 	)
