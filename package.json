@@ -1,6 +1,6 @@
 {
 	"name": "it-incubator-todolist-ts",
-	"homepage": ".",
+	"homepage": "",
 	"jest": {
 		"moduleNameMapper": {
 			"axios": "axios/dist/node/axios.cjs"
